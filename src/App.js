@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Amos from './Amos';
+import Evelyn from './Evelyn';
 
 function App() {
+  const [loopState, setLoopState] = useState(0);
+  const cycleLoop = () => setLoopState(loopState + 1);
+
+  useEffect(() => {
+    const timer = setTimeout(cycleLoop, 750);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line
+  }, [loopState]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Amos loopState={loopState} />
+      <Evelyn loopState={loopState} />
     </div>
   );
 }
