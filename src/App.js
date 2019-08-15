@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Amos from './Amos';
-import Evelyn from './Evelyn';
+import TrainRide from './TrainRide';
 
 function App() {
   const [loopState, setLoopState] = useState(0);
@@ -15,8 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      <Amos loopState={loopState} />
-      <Evelyn loopState={loopState} />
+      <TrainRide loopState={loopState} offset={0}>Amos</TrainRide>
+      <TrainRide loopState={loopState} offset={3}>Evelyn</TrainRide>
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
 
-
-const loopStateToStyles = loopState => {
-  switch (loopState % 6) {
+const loopStateToStyles = (loopState, offset) => {
+  switch ((loopState + offset) % 6) {
     case 0:
       return {
         transform: 'translate3d(100%, 0, 0)',
@@ -35,17 +34,17 @@ const loopStateToStyles = loopState => {
 }
 
 
-const Amos = ({ loopState }) => {
+const TrainRide = ({ loopState, offset = 0, children }) => {
 
-  const styles = useSpring(loopStateToStyles(loopState));
+  const styles = useSpring(loopStateToStyles(loopState, offset));
 
 
   return (
     <animated.div className="train" style={styles}>
-      Amos
+      {children}
     </animated.div>
   );
 
 }
 
-export default Amos;
+export default TrainRide;
