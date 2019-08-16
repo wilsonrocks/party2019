@@ -34,15 +34,13 @@ const loopStateToStyles = (loopState, offset) => {
 }
 
 
-const TrainRide = ({ loopState, offset = 0, children }) => {
+const TrainRide = ({ loopState, offset = 0, imgSrc }) => {
 
   const styles = useSpring(loopStateToStyles(loopState, offset));
 
 
   return (
-    <animated.div className="train" style={styles}>
-      {children}
-    </animated.div>
+    <animated.img className="train" style={styles} src={imgSrc} />
   );
 
 }
