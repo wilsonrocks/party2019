@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.scss';
 import TrainTrack from './TrainTrack';
+import Text from './Text';
 
-function App() {
-  const [loopState, setLoopState] = useState(0);
-  const cycleLoop = () => setLoopState(loopState + 1);
-
-  useEffect(() => {
-    const timer = setTimeout(cycleLoop, 1000);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line
-  }, [loopState]);
-
-  return (
-    <div className="App">
-      <TrainTrack />
-    </div >
-  );
-}
+const App = () => (
+  <div className="App">
+    <TrainTrack />
+    <Text />
+  </div >
+);
 
 export default App;

@@ -1,6 +1,14 @@
 body {
   overflow-x: hidden;
+  font-family: 'Amaranth', sans-serif;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 
 .track-wrapper {
   background-image: url("images/trackrepeat.png");
@@ -24,5 +32,27 @@ body {
 }
 
 .train {
-  max-width: 90%;
+  max-width: 50%;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  button {
+    border: none;
+    background: unset;
+    font-size: 24pt;
+    padding: 10px;
+  }
+}
+
+.text {
+  text-align: center;
+}
+
+.invitee {
+  text-transform: capitalize;
 }
