@@ -39,7 +39,8 @@ const TrainTrack = () => {
             return (content[active] ?
               <animated.img
                 src={content[active]}
-                alt="Train"
+                alt=""
+                className="train"
                 key={key}
                 style={style} />
               : <animated.div key={key} style={style} />
