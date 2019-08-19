@@ -20,33 +20,36 @@ const TrainTrack = () => {
 
   const transitions = useTransition(active, null, {
     from: {
-      transform: 'translate3d(100vw, 0, 0)',
+      transform: 'translate3d(100vw, 0, 0) skew(-15deg, 0)',
       position: 'absolute',
     },
     enter: {
-      transform: 'translate3d:(0, 0, 0)',
+      transform: 'translate3d:(0, 0, 0) skew(0, 0)',
     },
     leave: {
-      transform: 'translate3d(-100vw, 0, 0)',
+      transform: 'translate3d(-100vw, 0, 0)  skew(-15deg 0)',
     },
   });
 
   return (
-    <div className="train-track">
-      {
-        transitions.map(
-          ({ item: active, key, props: style }) => {
-            return (content[active] ?
-              <animated.img
-                src={content[active]}
-                alt=""
-                className="train"
-                key={key}
-                style={style} />
-              : <animated.div key={key} style={style} />
-            )
-          }
-        )}
+    <div className="track-wrapper">
+      <div className="train-track">
+        {
+          transitions.map(
+            ({ item: active, key, props: style }) => {
+              return (content[active] ?
+                <animated.img
+                  src={content[active]}
+                  alt=""
+                  className="train"
+                  key={key}
+                  style={style} />
+                : <animated.div key={key} style={style} className="train" />
+              )
+            }
+          )}
+      </div>
+      <div className="spacer" />
     </div>
   )
 };
