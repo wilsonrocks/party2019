@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, useSpring, animated } from 'react-spring';
 
 import EvelynImage from './images/evelyn.png';
 import AmosImage from './images/amos.png';
 
 const content = [
-  EvelynImage, null, AmosImage, null,
+  null, EvelynImage, null, AmosImage,
 ];
 
 const TrainTrack = () => {
@@ -17,6 +17,13 @@ const TrainTrack = () => {
     return () => clearTimeout(timer);
     // eslint-disable-next-line
   }, [active])
+
+  const trackStyles = useSpring({
+    from: {
+      transform: 'translate3d(-100vw,0,0)',
+    },
+    transform: 'translate3d(0,0,0)',
+  });
 
   const transitions = useTransition(active, null, {
     from: {
@@ -32,7 +39,7 @@ const TrainTrack = () => {
   });
 
   return (
-    <div className="track-wrapper">
+    <animated.div className="track-wrapper" style={trackStyles}>
       <div className="train-track">
         {
           transitions.map(
@@ -50,7 +57,7 @@ const TrainTrack = () => {
           )}
       </div>
       <div className="spacer" />
-    </div>
+    </animated.div>
   )
 };
 
