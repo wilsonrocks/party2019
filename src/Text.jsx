@@ -36,8 +36,8 @@ const notes = [
   ,
   <div>
     <h1>RSVP</h1>
-    <p>Shelley: 07761901734</p>
-    <p>James: 07814509239</p>
+    <p>Shelley: <a href="tel:07761901734">07761901734</a></p>
+    <p>James: <a href="tel:07814509239">07814509239</a></p>
   </div>
   ,
 ];
