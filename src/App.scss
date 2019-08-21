@@ -37,6 +37,10 @@ body {
   max-width: 50%;
 }
 
+.invitee {
+  text-transform: capitalize;
+}
+
 .text-wrapper {
   display: grid;
   min-height: 300px;
