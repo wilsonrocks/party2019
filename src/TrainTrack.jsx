@@ -5,7 +5,7 @@ import EvelynImage from './images/evelyn.png';
 import AmosImage from './images/amos.png';
 
 const content = [
-  null, EvelynImage, null, AmosImage,
+  EvelynImage, null, AmosImage, null,
 ];
 
 const TrainTrack = () => {
