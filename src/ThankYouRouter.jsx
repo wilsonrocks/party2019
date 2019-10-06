@@ -73,6 +73,21 @@ const ThankYouRouter = () => (
         </ThankYou>
       )}
     />
+
+    <Route
+      path="/thankyou/lucy-and-josie"
+      render={() => (
+        <ThankYou giver="Lucy and Josie">
+          <p>
+            Thank you for our lovely presents! Evelyn loved the original You
+            Choose book so much that it fell apart, so she's very excited about
+            the space version - as well as the jungle sock puppets. Amos got
+            very excited when he saw his dinosaur book. We're all big Axel
+            Scheffler fans here:)
+          </p>
+        </ThankYou>
+      )}
+    />
   </Switch>
 );
 export default ThankYouRouter;
