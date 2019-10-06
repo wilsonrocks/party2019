@@ -7,10 +7,10 @@ const Invitation = ({
     params: { name }
   }
 }) => (
-  <React.Fragment>
+  <div className="invitation-wrapper">
     <TrainTrack />
     <Text name={name} />
-  </React.Fragment>
+  </div>
 );
 
 export default Invitation;
