@@ -134,10 +134,10 @@ const ThankYouRouter = () => (
     <Route
       path="/thankyou/eva"
       render={() => (
-        <ThankYou giver="Eva and Benjamin">
+        <ThankYou giver="Eva and Benjamine">
           <p>
             Thank you for our lovely presents! Amos will love listening to this
-            beautiful
+            beautiful story:)
           </p>
         </ThankYou>
       )}
