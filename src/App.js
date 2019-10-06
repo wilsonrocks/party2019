@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './App.scss';
 import Invitation from './Invitation';
+import ThankYouRouter from './ThankYouRouter';
 
 const Fallback = (
   <div className="fallback">
@@ -16,6 +17,7 @@ const App = () => (
       <React.Suspense fallback={Fallback}>
         <Switch>
           <Route path="/invitation/:name?" component={Invitation} />
+          <Route path="/thankyou" component={ThankYouRouter} />
         </Switch>
       </React.Suspense>
     </BrowserRouter>

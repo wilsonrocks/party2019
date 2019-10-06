@@ -1,11 +1,6 @@
 import React from 'react';
 import { animated, useTrail } from 'react-spring';
 
-const invitee = window.location.pathname
-  .slice(1)
-  .split('-')
-  .join(' ');
-
 const Text = ({ name }) => {
   const notes = [
     <div>

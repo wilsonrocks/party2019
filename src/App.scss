@@ -11,9 +11,8 @@ body {
   height: 100vh;
 }
 
-
 .track-wrapper {
-  background-image: url("images/trackrepeat.png");
+  background-image: url('images/trackrepeat.png');
   background-repeat: repeat no-repeat;
   background-size: auto 45px;
   background-size: contain;
@@ -70,4 +69,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.thank-you-wrapper {
+  max-width: 500px;
+  margin: auto;
 }
