@@ -155,6 +155,19 @@ const ThankYouRouter = () => (
         </ThankYou>
       )}
     />
+
+    <Route
+      path="/thankyou/amy"
+      render={() => (
+        <ThankYou giver="Amy, Mark and Sarah">
+          <p>
+            Thank you for our lovely presents! Amos has been playing with his
+            pirate ship all day, and Evelyn is very very excited about the fairy
+            garden!
+          </p>
+        </ThankYou>
+      )}
+    />
   </Switch>
 );
 export default ThankYouRouter;
