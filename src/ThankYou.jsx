@@ -1,30 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 
 import cuddlingImage from './images/cuddling.png';
 
 const ThankYou = ({ giver, children }) => {
-  const styles = useSpring({
-    from: {
-      transform: 'translate3d(100%,0,0) rotate3d(0.5,0.5,0,90deg)'
-    },
-    to: { transform: 'translate3d(0,0,0) rotate3d(0,0,0,0)' }
-  });
-  const imageStyles = useSpring({
-    from: { transform: 'scale(0)' },
-    to: { transform: 'scale(1)' }
-  });
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const styles = useSpring(
+    imageLoaded
+      ? {
+          transform: 'translate3d(0,0,0) rotate3d(0,0,0,0) scale(1,1)'
+        }
+      : {
+          transform:
+            'translate3d(100%,0,0) rotate3d(0.5,0.5,0,90deg) scale(1, 0)'
+        }
+  );
   return (
     <animated.div className="thank-you-wrapper" style={styles}>
       <div className="inner-wrapper">
         <h1>Thank you!</h1>
 
         <div className="cuddling-wrapper">
-          <animated.img
+          <img
             alt=""
             src={cuddlingImage}
             className="cuddling"
-            style={imageStyles}
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
 
