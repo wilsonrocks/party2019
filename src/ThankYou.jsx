@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 
 import cuddlingImage from './images/cuddling.png';
+import evelynSignatureImage from './images/evelyn.signature.png';
+import amosSignatureImage from './images/amos.signature.png';
 
 const ThankYou = ({ giver, children }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -19,7 +21,6 @@ const ThankYou = ({ giver, children }) => {
     <animated.div className="thank-you-wrapper" style={styles}>
       <div className="inner-wrapper">
         <h1>Thank you!</h1>
-
         <div className="cuddling-wrapper">
           <img
             alt=""
@@ -28,12 +29,18 @@ const ThankYou = ({ giver, children }) => {
             onLoad={() => setImageLoaded(true)}
           />
         </div>
-
         <h2>Dear {giver},</h2>
         <p>Thank you for coming to our party!</p>
-        <p>{children}</p>
 
-        <p>Love from EVELYN and AMOS XXXXXX</p>
+        {children}
+
+        <div className="sign-off">
+          <p>Love from</p>
+          <img alt="Evelyn" src={evelynSignatureImage} /> <p>and</p>
+          <img alt="Amos" src={amosSignatureImage} />
+          <p>(Amos)</p>
+          <p>X X X X X X</p>
+        </div>
       </div>
     </animated.div>
   );
