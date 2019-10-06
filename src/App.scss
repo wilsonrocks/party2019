@@ -72,6 +72,17 @@ body {
 }
 
 .thank-you-wrapper {
-  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.inner-wrapper {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  width: 500px;
+  padding: 2rem;
   margin: auto;
 }

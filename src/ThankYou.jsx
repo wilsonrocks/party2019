@@ -10,12 +10,14 @@ const ThankYou = ({ giver, children }) => {
   });
   return (
     <animated.div className="thank-you-wrapper" style={styles}>
-      <h1>Thank you!</h1>
-      <h2>Dear {giver},</h2>
-      <p>Thank you for coming to our party!</p>
-      <p>{children}</p>
+      <div className="inner-wrapper">
+        <h1>Thank you!</h1>
+        <h2>Dear {giver},</h2>
+        <p>Thank you for coming to our party!</p>
+        <p>{children}</p>
 
-      <p>Love from EVELYN and AMOS XXXXXX</p>
+        <p>Love from EVELYN and AMOS XXXXXX</p>
+      </div>
     </animated.div>
   );
 };

@@ -16,6 +16,17 @@ const ThankYouRouter = () => (
         </ThankYou>
       )}
     />
+    <Route
+      path="/thankyou/winter"
+      render={() => (
+        <ThankYou giver="Winter">
+          <p>
+            Thank you for our lovely presents, we love these sticker books but
+            we haven't seen these ones! We are super excited to do them!
+          </p>
+        </ThankYou>
+      )}
+    />
   </Switch>
 );
 export default ThankYouRouter;
