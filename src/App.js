@@ -1,22 +1,25 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import './App.scss';
-const TrainTrack = React.lazy(() => import('./TrainTrack'));
-const Text = React.lazy(() => import('./Text'));
+import Invitation from './Invitation';
 
 const Fallback = (
   <div className="fallback">
     <p>Just wait... It will be good.</p>
   </div>
-)
-
+);
 
 const App = () => (
   <div className="App">
-    <React.Suspense fallback={Fallback}>
-      <TrainTrack />
-      <Text />
-    </React.Suspense>
-  </div >
+    <BrowserRouter>
+      <React.Suspense fallback={Fallback}>
+        <Switch>
+          <Route path="/invitation/:name?" component={Invitation} />
+        </Switch>
+      </React.Suspense>
+    </BrowserRouter>
+  </div>
 );
 
 export default App;
