@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { animated, useSpring } from 'react-spring';
 
 import cuddlingImage from './images/cuddling.png';
@@ -6,6 +6,9 @@ import evelynSignatureImage from './images/evelyn.signature.png';
 import amosSignatureImage from './images/amos.signature.png';
 
 const ThankYou = ({ giver, children }) => {
+  useEffect(() => {
+    document.title = `Thank you, ${giver}!`;
+  }, [giver]);
   const [imageLoaded, setImageLoaded] = useState(false);
   const styles = useSpring(
     imageLoaded

@@ -88,6 +88,73 @@ const ThankYouRouter = () => (
         </ThankYou>
       )}
     />
+
+    <Route
+      path="/thankyou/sam-and-ben"
+      render={() => (
+        <ThankYou giver="Sam and Ben">
+          <p>
+            Thank you for our lovely presents! We have lots of bugs in our
+            garden so Evelyn can't wait to make a home for them. Amos, (and
+            Evelyn and Mummy and Daddy) has loved driving the little red car -
+            an instant hit!
+          </p>
+        </ThankYou>
+      )}
+    />
+
+    <Route
+      path="/thankyou/django-and-fiadh"
+      render={() => (
+        <ThankYou giver="Django and Fiadh">
+          <p>
+            Thank you for our lovely presents! Evelyn's mug is amazing, and she
+            did the jigsaws with her nana today, needing some help with
+            Fluttershy and Rainbow dash. Amos loves his park book as well -
+            great interactions!
+          </p>
+          <p> Also, thank you for your cakes, they were delicious:)</p>
+        </ThankYou>
+      )}
+    />
+
+    <Route
+      path="/thankyou/annie-and-lizzie"
+      render={() => (
+        <ThankYou giver="Annie and Lizzie">
+          <p>
+            Thank you for our lovely presents! Evelyn loves crafty things like
+            her dressing up book, and Amos will love doing painting - he's just
+            starting to enjoy making <del>marks</del> mess!
+          </p>
+        </ThankYou>
+      )}
+    />
+
+    <Route
+      path="/thankyou/eva"
+      render={() => (
+        <ThankYou giver="Eva and Benjamin">
+          <p>
+            Thank you for our lovely presents! Amos will love listening to this
+            beautiful
+          </p>
+        </ThankYou>
+      )}
+    />
+
+    <Route
+      path="/thankyou/isabella-and-isaac"
+      render={() => (
+        <ThankYou giver="Isabella and Isaac">
+          <p>
+            Thank you for our lovely presents! Evelyn loves her bracelet, and
+            got up very early the day after to look at all the bits to make the
+            mirror! Amos loves his truck and belt as well:)
+          </p>
+        </ThankYou>
+      )}
+    />
   </Switch>
 );
 export default ThankYouRouter;
