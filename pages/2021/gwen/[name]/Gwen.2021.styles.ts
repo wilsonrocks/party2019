@@ -1,23 +1,28 @@
 import styled from 'styled-components';
 
+const BLUE = '#0041b9';
+const PADDING = '10px';
+const BORDER_RADIUS = '10px';
+const DURATION = '0.3s';
+
+export const Container = styled.div`
+  background-color: ${BLUE};
+  min-height: 100vh;
+`;
+
 export const Wrapper = styled.div<{ showingDetails: boolean }>`
-  --blue: #0041b9;
-  --padding: 10px;
-  --border-radius: 10px;
-  --duration: 0.3s;
-  background: var(--blue);
+  background: ${BLUE};
   font-family: Roboto, cursive;
 
   position: relative;
   margin: auto;
-  height: 100vh;
   max-width: 800px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto repeat(2, minmax(0, 1fr));
-  background-color: var(--blue);
-  gap: var(--padding);
-  padding: var(--padding);
+  background-color: ${BLUE};
+  gap: ${PADDING};
+  padding: ${PADDING};
   justify-items: center;
   align-items: center;
   transform: rotate3d(
@@ -28,18 +33,18 @@ export const Wrapper = styled.div<{ showingDetails: boolean }>`
     )
     scale(${(props) => (props.showingDetails ? 0.5 : 1)});
   opacity: ${(props) => (props.showingDetails ? 0 : 1)};
-  transition: transform var(--duration), opacity var(--duration);
+  transition: transform ${DURATION}, opacity ${DURATION};
 `;
 
 export const Text = styled.div`
   color: white;
-  padding: var(--padding);
+  padding: ${PADDING};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  gap: var(--padding);
+  gap: ${PADDING};
 `;
 
 export const Recipient = styled.h2`
@@ -47,30 +52,30 @@ export const Recipient = styled.h2`
   text-align: center;
   color: white;
   margin: 0;
-  padding: var(--padding);
+  padding: ${PADDING};
   display: grid;
   place-items: center;
 `;
 
 export const Button = styled.button`
-  background: var(--blue);
+  background: ${BLUE};
   border: solid white 3px;
-  transition: color var(--duration), background-color var(--duration),
-    border-color var(--duration);
+  transition: color ${DURATION}, background-color ${DURATION},
+    border-color ${DURATION};
   color: white;
   text-transform: uppercase;
-  padding: var(--padding);
-  border-radius: var(--border-radius);
+  padding: ${PADDING};
+  border-radius: ${BORDER_RADIUS};
 
   :hover,
   :focus {
-    border: solid var(--blue) 3px;
-    color: var(--blue);
+    border: solid ${BLUE} 3px;
+    color: ${BLUE};
     background-color: white;
   }
 
   :disabled {
-    background: var(--blue);
+    background: ${BLUE};
     color: white;
   }
 `;
@@ -82,11 +87,11 @@ export const DetailsWrapper = styled.div<{ showingDetails: boolean }>`
   transform: translate3d(-50%, -50%, 0);
   opacity: ${(props) => (props.showingDetails ? 1 : 0)};
 
-  transition: opacity var(--duration);
+  transition: opacity ${DURATION};
   background-color: white;
-  color: var(--blue);
+  color: ${BLUE};
   display: grid;
   place-items: center;
-  padding: var(--padding);
-  border-radius: var(--border-radius);
+  padding: ${PADDING};
+  border-radius: ${BORDER_RADIUS};
 `;

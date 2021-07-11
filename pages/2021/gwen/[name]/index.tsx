@@ -9,6 +9,7 @@ import {
   Recipient,
   Text,
   Wrapper,
+  Container,
 } from './Gwen.2021.styles';
 import gwenImage from './gwenyog.png';
 
@@ -27,17 +28,25 @@ interface Props {
 const Invite: FunctionComponent<Props> = ({ name }) => {
   const [showingDetails, setShowingDetails] = useState<boolean>(false);
   return (
-    <>
+    <Container>
       <Wrapper showingDetails={showingDetails}>
         {name && <Recipient>Dear {name}</Recipient>}
         <Text>
           <time>Sunday 12 September</time>
           <time> 2pm</time>
         </Text>
-        <Image src={yogImage} height="373" width="271" />
-        <Image src={gwenImage} height="357" width="216" />
-        {/* <Image src={yogImage} layout="fill" objectFit="contain" /> */}
-        {/* <Image src={gwenImage} layout="fill" objectFit="contain" /> */}
+        <div>
+          <Image
+            src={yogImage}
+            height="373"
+            width="271"
+            alt="Gwen's First Birthday"
+            priority
+          />
+        </div>
+        <div>
+          <Image src={gwenImage} height="357" width="216" alt="" priority />
+        </div>
 
         <Button
           onClick={() => setShowingDetails(true)}
@@ -56,7 +65,7 @@ const Invite: FunctionComponent<Props> = ({ name }) => {
         </address>
         <Button onClick={() => setShowingDetails(false)}>Close</Button>
       </DetailsWrapper>
-    </>
+    </Container>
   );
 };
 
