@@ -1,16 +1,16 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import React, { FunctionComponent, useState } from 'react';
-import yogImage from './greek.png';
 import {
   Button,
+  Container,
   DetailsWrapper,
   Recipient,
   Text,
   Wrapper,
-  Container,
-} from './Gwen.2021.styles';
+} from '../../../components/Gwen.2021';
+import yogImage from './greek.png';
 import gwenImage from './gwenyog.png';
 
 const GUEST_LIST: Record<string, string | undefined> = {
@@ -29,11 +29,24 @@ const Invite: FunctionComponent<Props> = ({ name }) => {
   const [showingDetails, setShowingDetails] = useState<boolean>(false);
   return (
     <Container>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Wrapper showingDetails={showingDetails}>
         {name && <Recipient>Dear {name}</Recipient>}
         <Text>
-          <time>Sunday 12 September</time>
-          <time> 2pm</time>
+          <span>Sunday</span>
+          <span>12 September</span>
+          <span> 2pm</span>
         </Text>
         <div>
           <Image

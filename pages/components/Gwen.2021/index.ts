@@ -1,22 +1,25 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+const WIDTH = '700px';
 const BLUE = '#0041b9';
 const PADDING = '10px';
 const BORDER_RADIUS = '10px';
 const DURATION = '0.3s';
-
+const FONT = css`
+  font-family: 'Otomanopee One', sans-serif;
+`;
 export const Container = styled.div`
   background-color: ${BLUE};
   min-height: 100vh;
+  ${FONT};
 `;
 
 export const Wrapper = styled.div<{ showingDetails: boolean }>`
   background: ${BLUE};
-  font-family: Roboto, cursive;
 
   position: relative;
   margin: auto;
-  max-width: 800px;
+  max-width: ${WIDTH};
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto repeat(2, minmax(0, 1fr));
@@ -40,8 +43,10 @@ export const Text = styled.div`
   color: white;
   padding: ${PADDING};
   display: flex;
+  flex-direction: column;
+
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   text-align: center;
   gap: ${PADDING};
@@ -58,6 +63,7 @@ export const Recipient = styled.h2`
 `;
 
 export const Button = styled.button`
+  ${FONT};
   background: ${BLUE};
   border: solid white 3px;
   transition: color ${DURATION}, background-color ${DURATION},
